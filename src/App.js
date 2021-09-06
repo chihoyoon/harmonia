@@ -1,10 +1,15 @@
-import logo from './logo.svg';
+import './App.css';
+
+import Header from './components/Header';
+import Article from './components/Article';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <div className="App">
-      Hello, world
-      <button className="btn btn-primary">Click Me</button>
+      <Header />     
+      <Article />
+      <Footer />
     </div>
   );
 }
