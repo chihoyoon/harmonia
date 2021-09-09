@@ -1,39 +1,36 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 class Header extends Component {
     render() {
         return (
-            <div>
-                <nav className="navbar navbar-expand-sm navbar-secondary bg-secondary">
-                    <h3 className="text-warning">Harmonia Wellness</h3>
-                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span className="navbar-toggler-icon"></span>
-                    </button>
+            <BrowserRouter>         
+              <nav className="navbar navbar-expand-sm navbar-secondary bg-secondary">
+                    <h3 className="text-warning">Harmonia Wellness</h3>                    
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="navbar-nav mr-auto">
                             <li className="nav-item active">
-                                <a className="nav-link" href="/">HOME<span className="sr-only">(current)</span></a>
+                                <Link to="/">HOME</Link>
                             </li>
                             <li className="nav-item active">
-                                <a className="nav-link" href="/about">ABOUT</a>
+                                <Link to="/about">ABOUT</Link>
                             </li>
                             <li className="nav-item active">
-                                <a className="nav-link" href="/credential">CREDENTIAL</a>
+                                <Link to="/credential">CREDENTIAL</Link>
                             </li>
                             <li className="nav-item active">
-                                <a className="nav-link" href="/service">SERVICE</a>
+                                <Link to="/service">SERVICE</Link>
                             </li>                            
                             <li className="nav-item active">
-                                <a className="nav-link" href="/testimonials">TESTIMONIALS</a>
+                                <Link to="/testimonials">TESTIMONIALS</Link>
                             </li>
                             <li className="nav-item active">
-                                <a className="nav-link" href="/contact">CONTACT</a>
+                                <Link to="/contact">CONTACT</Link>
                             </li>
                         </ul>
                     </div>
                 </nav>  
-            </div>
+            </BrowserRouter>
         );
     }
 }
