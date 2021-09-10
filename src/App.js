@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 import './App.css';
+import {Navbar, Container, Nav} from 'react-bootstrap';
 
 import Home from './components/Home';
 import About from './components/About';
@@ -13,41 +14,32 @@ import Contact  from './components/Contact';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>         
-            <nav className="navbar navbar-expand-sm navbar-secondary bg-secondary">
-                  <h3 className="text-warning">Harmonia Wellness</h3>                    
-                  <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul className="navbar-nav mr-auto">
-                          <li className="nav-item active">
-                              <Link to="/">HOME</Link>
-                          </li>
-                          <li className="nav-item active">
-                              <Link to="/about">ABOUT</Link>
-                          </li>
-                          <li className="nav-item active">
-                              <Link to="/credential">CREDENTIAL</Link>
-                          </li>
-                          <li className="nav-item active">
-                              <Link to="/service">SERVICE</Link>
-                          </li>                            
-                          <li className="nav-item active">
-                              <Link to="/testimonials">TESTIMONIALS</Link>
-                          </li>
-                          <li className="nav-item active">
-                              <Link to="/contact">CONTACT</Link>
-                          </li>
-                      </ul>
-                  </div>
-              </nav>  
-              <Switch>
-                  <Route exact path="/" component={Home_}></Route>
-                  <Route path="/about" component={About_}></Route>
-                  <Route path="/credential" component={Credential_}></Route>
-                  <Route path="/service" component={Service_}></Route>
-                  <Route path="/testimonials" component={Testimonials_}></Route>
-                  <Route path="/contact" component={Contact_}></Route>
-              </Switch>
-          </BrowserRouter>
+        <BrowserRouter>
+            <Navbar bg="dark" expand="lg">
+                <Container>
+                    <h3 className="text-warning">Harmonia Wellness</h3>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                    <Nav className="me-auto">
+                        <Nav.Link><Link to="/">HOME</Link></Nav.Link>
+                        <Nav.Link><Link to="/about">ABOUT</Link></Nav.Link>
+                        <Nav.Link><Link to="/credential">CREDENTIAL</Link></Nav.Link>
+                        <Nav.Link><Link to="/service">SERVICE</Link></Nav.Link>
+                        <Nav.Link><Link to="/testimonials">TESTIMONIALS</Link></Nav.Link>
+                        <Nav.Link><Link to="/contact">CONTACT</Link></Nav.Link>
+                    </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>      
+            <Switch>
+                <Route exact path="/" component={Home_}></Route>
+                <Route path="/about" component={About_}></Route>
+                <Route path="/credential" component={Credential_}></Route>
+                <Route path="/service" component={Service_}></Route>
+                <Route path="/testimonials" component={Testimonials_}></Route>
+                <Route path="/contact" component={Contact_}></Route>
+            </Switch>
+        </BrowserRouter>
     </div>
   );
 }
