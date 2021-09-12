@@ -9,6 +9,7 @@ import Credential from './components/Credential';
 import Service from './components/Service';
 import Testimonials from './components/Testimonials';
 import Contact  from './components/Contact';
+import Footer from './components/Footer';
 
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
                 <Route path="/contact" component={Contact_}></Route>
             </Switch>
         </BrowserRouter>
+        <Footer />
     </div>
   );
 }
