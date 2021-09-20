@@ -1,3 +1,4 @@
+import React from 'react';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 
 import './App.css';
@@ -10,40 +11,44 @@ import Service from './components/Service';
 import Testimonials from './components/Testimonials';
 import Contact  from './components/Contact';
 import Footer from './components/Footer';
+import Booking from './components/Booking';
 
-
-function App() {
-  return (
-    <div className="App">
-        <BrowserRouter>
-            <Navbar bg="dark" expand="lg">
-                <Container>
-                    <h3 className="text-warning">Harmonia Wellness</h3>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
-                        <Nav.Link><Link to="/">HOME</Link></Nav.Link>
-                        <Nav.Link><Link to="/about">ABOUT</Link></Nav.Link>
-                        <Nav.Link><Link to="/credential">CREDENTIAL</Link></Nav.Link>
-                        <Nav.Link><Link to="/service">SERVICE</Link></Nav.Link>
-                        <Nav.Link><Link to="/testimonials">TESTIMONIALS</Link></Nav.Link>
-                        <Nav.Link><Link to="/contact">CONTACT</Link></Nav.Link>
-                    </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>      
-            <Switch>
-                <Route exact path="/" component={Home_}></Route>
-                <Route path="/about" component={About_}></Route>
-                <Route path="/credential" component={Credential_}></Route>
-                <Route path="/service" component={Service_}></Route>
-                <Route path="/testimonials" component={Testimonials_}></Route>
-                <Route path="/contact" component={Contact_}></Route>
-            </Switch>
-        </BrowserRouter>
-        <Footer />
-    </div>
-  );
+class App extends React.Component {
+  render () {
+      return (
+        <div className="App">
+            <BrowserRouter>
+                <Navbar bg="dark" expand="lg">
+                    <Container>
+                        <h3 className="text-warning">Harmonia Wellness</h3>
+                        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                        <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <Nav.Link><Link to="/">HOME</Link></Nav.Link>
+                            <Nav.Link><Link to="/about">ABOUT</Link></Nav.Link>
+                            <Nav.Link><Link to="/credential">CREDENTIAL</Link></Nav.Link>
+                            <Nav.Link><Link to="/service">SERVICE</Link></Nav.Link>
+                            <Nav.Link><Link to="/testimonials">TESTIMONIALS</Link></Nav.Link>
+                            <Nav.Link><Link to="/contact">CONTACT</Link></Nav.Link>
+                            <Nav.Link><Link to="/booking"><h6 className="book">Booking Now</h6></Link></Nav.Link>
+                        </Nav>
+                        </Navbar.Collapse>
+                    </Container>
+                </Navbar>      
+                <Switch>
+                    <Route exact path="/" component={Home_}></Route>
+                    <Route path="/about" component={About_}></Route>
+                    <Route path="/credential" component={Credential_}></Route>
+                    <Route path="/service" component={Service_}></Route>
+                    <Route path="/testimonials" component={Testimonials_}></Route>
+                    <Route path="/contact" component={Contact_}></Route>
+                    <Route path="/booking" component={Booking_}></Route>
+                </Switch>
+            </BrowserRouter>
+            <Footer />
+        </div>
+      );    
+  } 
 }
 
 function Home_() {return <Home />};
@@ -52,5 +57,6 @@ function Credential_() {return <Credential />};
 function Service_() {return <Service />};
 function Testimonials_() {return <Testimonials />};
 function Contact_() {return <Contact />};
+function Booking_() {return <Booking />};
 
 export default App;
