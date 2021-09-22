@@ -4,7 +4,9 @@ const db = require('../config/db');
 
 router.get('/', (req, res) => {
     console.log('http://localhost:5000/api/');
-    console.log(db.query('select * from book'))
+    db.query('select * from book', function (err, results) {
+        console.log(results);
+    });
     res.send({title: 'Booking Now!!'})
 });
 
