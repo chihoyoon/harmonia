@@ -15,7 +15,7 @@ class Booking extends Component {
 
     render() {
         return (
-            <div>
+            <div>                
                {this.state.title? <h1>{this.state.title}</h1>:<h1>loading...</h1>}
             </div>
         );

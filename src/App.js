@@ -12,8 +12,11 @@ import Testimonials from './components/Testimonials';
 import Contact  from './components/Contact';
 import Footer from './components/Footer';
 import Booking from './components/Booking';
+import Login from './components/Login';
+import Signup from './components/Signup';
 
 class App extends React.Component {
+    
   render () {
       return (
         <div className="App">
@@ -30,7 +33,9 @@ class App extends React.Component {
                             <Nav.Link><Link to="/service">SERVICE</Link></Nav.Link>
                             <Nav.Link><Link to="/testimonials">TESTIMONIALS</Link></Nav.Link>
                             <Nav.Link><Link to="/contact">CONTACT</Link></Nav.Link>
-                            <Nav.Link><Link to="/booking"><h6 className="book">Booking Now</h6></Link></Nav.Link>
+                            <Nav.Link><Link to="/booking"><h6 className="book">Book Now</h6></Link></Nav.Link>
+                            <Nav.Link><Link to="/api/login">Login</Link></Nav.Link>
+                            <Nav.Link><Link to="/api/signup">Signup</Link></Nav.Link>                                                        
                         </Nav>
                         </Navbar.Collapse>
                     </Container>
@@ -43,6 +48,8 @@ class App extends React.Component {
                     <Route path="/testimonials" component={Testimonials_}></Route>
                     <Route path="/contact" component={Contact_}></Route>
                     <Route path="/booking" component={Booking_}></Route>
+                    <Route path="/api/login" component={Login_}></Route>
+                    <Route path="/api/signup" component={Signup_}></Route>
                 </Switch>
             </BrowserRouter>
             <Footer />
@@ -58,5 +65,7 @@ function Service_() {return <Service />};
 function Testimonials_() {return <Testimonials />};
 function Contact_() {return <Contact />};
 function Booking_() {return <Booking />};
+function Login_() {return <Login />};
+function Signup_() {return <Signup />};
 
 export default App;
