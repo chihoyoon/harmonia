@@ -15,23 +15,12 @@ function Login() {
     }
 
     const onClickLogin = () => {
-        axios.post('/api/login', null, {
+        axios.post('http://localhost:5000/api/login', null, {
             params: {
                 'email': Email,
                 'password': Password
             }
         }).preventDefault()
-        .then(res => {
-            if (res.data.email === undefined){
-                alert('Could not find your email')
-            } else if (res.data.email === null){
-                alert('Wrong password. Tr again.')
-            } else if (res.data.email === Email){
-                sessionStorage.setItem('email', Email)                
-            }
-            document.location.href = '/booking'
-        })
-        .catch()
     }
  
     useEffect(() => {
@@ -47,16 +36,16 @@ function Login() {
             <Form>
                 <Form.Group className="mb-3 col-auto" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" value={Email} onChange={handleEmail} placeholder="Enter email" />                    
+                    <Form.Control type="email" placeholder="Enter email" />                    
                 </Form.Group>
                 <Form.Group className="mb-3 col-auto" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" value={Password} onChange={handlePassword} placeholder="Password" />
+                    <Form.Control type="password" placeholder="Password" />
                 </Form.Group>                  
-                <Button variant="primary" type="submit" onClick={onClickLogin}>
+                <Button variant="primary" type="submit">
                     Login
                 </Button>
-            </Form>                      
+            </Form>                                  
         </div>        
     );
 }

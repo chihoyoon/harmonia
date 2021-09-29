@@ -24,9 +24,19 @@ function Signup() {
         setConfirmPassword(e.target.value)
     }
 
-    const onClickSignup = (e) => {
-        e.preventDefault();
+    const onClickSignup = () => {
+        if (Password !== ConfirmPassword) {
+            alert('The passwords do not match')
+
+        } else {
+            axios.post('http://localhost:5000/api/signup', {
+                email: Email,
+                password: Password,
+                name: Name
+            }).preventDefault()
+        }
     }
+ 
  
     useEffect(() => {
         axios.get('/api/signup')
@@ -41,13 +51,13 @@ function Signup() {
             <Form>
                 <Form.Group className="mb-3 col-auto" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" value={Email} onChange={handleEmail} placeholder="Enter email" />                    
+                    <Form.Control type="email" value={Email} name="email" onChange={handleEmail} placeholder="Enter email" />                    
                 </Form.Group>
                 <Form.Group className="mb-3 col-auto">
                     <Form.Label>Name</Form.Label>
-                    <Form.Control type="text" value={Name} onChange={handleName} placeholder="Enter your name" />                  
+                    <Form.Control type="text" value={Name} name="name" onChange={handleName} placeholder="Enter your name" />                  
                 </Form.Group>
-                <Form.Group className="mb-3 col-auto" controlId="formBasicPassword">
+                <Form.Group className="mb-3 col-auto" name="password" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" value={Password} onChange={handlePassword} placeholder="Password" />
                 </Form.Group>
