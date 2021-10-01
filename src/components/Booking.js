@@ -13,6 +13,7 @@ class Booking extends Component {
             .then(data => this.setState({title: data.title}));
     }
 
+   
     render() {
         return (
             <div>                

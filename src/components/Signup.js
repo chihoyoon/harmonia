@@ -33,9 +33,11 @@ function Signup() {
                 email: Email,
                 password: Password,
                 name: Name
-            }).preventDefault()
+            })
+            // .then(() => console.log('success signup'))
+            // .catch((err) => console.log(err))
         }
-    }
+    };
  
  
     useEffect(() => {
