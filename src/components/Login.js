@@ -30,14 +30,14 @@ function Login() {
     [])
 
     return (
-        <div className="align-items-center pl-5">
+        <div className="container center">
             <h2>Login</h2>
             <Form>
-                <Form.Group className="mb-3 col-auto" controlId="formBasicEmail">
+                <Form.Group className="mb-3 col-lg-4" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" value={Email} name="email" onChange={handleEmail} placeholder="Enter email" />                     
                 </Form.Group>
-                <Form.Group className="mb-3 col-auto" controlId="formBasicPassword">
+                <Form.Group className="mb-3 col-lg-4" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" value={Password} onChange={handlePassword} placeholder="Password" />
                 </Form.Group>                  

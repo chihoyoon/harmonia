@@ -33,7 +33,7 @@ class App extends React.Component {
                             <Nav.Link><Link to="/service">SERVICE</Link></Nav.Link>
                             <Nav.Link><Link to="/testimonials">TESTIMONIALS</Link></Nav.Link>
                             <Nav.Link><Link to="/contact">CONTACT</Link></Nav.Link>
-                            <Nav.Link><Link to="/booking"><h6 className="book">Book Now</h6></Link></Nav.Link>
+                            <Nav.Link><Link to="/api/book">Book</Link></Nav.Link>
                             <Nav.Link><Link to="/api/login">Login</Link></Nav.Link>
                             <Nav.Link><Link to="/api/signup">Signup</Link></Nav.Link>                                                        
                         </Nav>
@@ -47,11 +47,12 @@ class App extends React.Component {
                     <Route path="/service" component={Service_}></Route>
                     <Route path="/testimonials" component={Testimonials_}></Route>
                     <Route path="/contact" component={Contact_}></Route>
-                    <Route path="/booking" component={Booking_}></Route>
+                    <Route path="/api/book" component={Booking_}></Route>
                     <Route path="/api/login" component={Login_}></Route>
                     <Route path="/api/signup" component={Signup_}></Route>
                 </Switch>
             </BrowserRouter>
+            <br /><br /><br /><br /><br />
             <Footer />
         </div>
       );    

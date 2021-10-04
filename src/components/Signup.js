@@ -48,22 +48,22 @@ function Signup() {
     [])
 
     return (
-        <div className="align-items-center pl-5">
+        <div className="container center">
             <h2>Signup</h2>
             <Form>
-                <Form.Group className="mb-3 col-auto" controlId="formBasicEmail">
+                <Form.Group className="mb-3 col-lg-4">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" value={Email} name="email" onChange={handleEmail} placeholder="Enter email" />                    
                 </Form.Group>
-                <Form.Group className="mb-3 col-auto">
+                <Form.Group className="mb-3 col-lg-4">
                     <Form.Label>Name</Form.Label>
                     <Form.Control type="text" value={Name} name="name" onChange={handleName} placeholder="Enter your name" />                  
                 </Form.Group>
-                <Form.Group className="mb-3 col-auto" name="password" controlId="formBasicPassword">
+                <Form.Group className="mb-3 col-lg-4">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" value={Password} onChange={handlePassword} placeholder="Password" />
                 </Form.Group>
-                <Form.Group className="mb-3 col-auto" controlId="formBasicPassword">
+                <Form.Group className="mb-3 col-lg-4">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" value={ConfirmPassword} onChange={handleConfirmPassword} placeholder="Confirm password" />
                 </Form.Group>                 
